@@ -6,114 +6,7 @@
 /*   By: albcamac <albcamac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 23:54:43 by albcamac          #+#    #+#             */
-/*   Updated: 2025/06/24 18:00:48 by albcamac         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* #include "push_swap.h"
-
-void	free_stack(t_node *stack)
-{
-	t_node	*tmp;
-	while (stack)
-	{
-		tmp = stack;
-		stack = stack->next;
-	free(tmp);
-	}
-}
-
-char	**parse_arguments(int argc, char **argv, int *new_argc)
-{
-	char	**args;
-
-	if (argc == 2)
-	{
-		args = ft_split(argv[1], ' ');
-		if (!args || !args[0])
-			error_exit("Error");
-		*new_argc = 0;
-		while (args[*new_argc])
-			(*new_argc)++;
-		return (args);
-	}
-	else
-	{
-		*new_argc = argc - 1;
-		return (&argv[1]);
-	}
-}
-
-void	free_split(char **arr)
-{
-	int	i = 0;
-
-	if (!arr)
-		return;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
-}
-
-int	main(int argc, char **argv)
-{
-	t_node	*stack_a = NULL;
-	t_node	*stack_b = NULL;
-	char	**args;
-	int		new_argc;
-	int		i = 0;
-	long	num;
-
-	if (argc < 2)
-		return (0);
-
-	args = parse_arguments(argc, argv, &new_argc);
-	while (i < new_argc)
-	{
-		if (!is_integer(args[i]))
-			error_exit("Error");
-		num = ft_atol(args[i]);
-		if (num < INT_MIN || num > INT_MAX)
-			error_exit("Error");
-		if (is_duplicate(stack_a, (int)num))
-			error_exit("Error");
-		stack_a = add_node_end(stack_a, (int)num);
-		i++;
-	}
-
-	if (argc == 2) // entrada entre comillas → liberar
-		free_split(args);
-
-	int size = stack_size(stack_a);
-	if (is_sort(stack_a) == 0)
-	{
-		if (size == 2 && stack_a->value > stack_a->next->value)
-			sa(&stack_a);
-		else if (size == 3)
-			sort_3(&stack_a);
-		else if (size == 4)
-			sort_4(&stack_a, &stack_b);
-		else if (size == 5)
-			sort_5(&stack_a, &stack_b);
-		else if (size > 5)
-			dual_chunk_sort(&stack_a, &stack_b);
-	}
-	else
-		return (0);
-	free_stack(stack_a);
-	free_stack(stack_b);
-	return (0);
-} */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: albcamac <albcamac@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 23:54:43 by albcamac          #+#    #+#             */
-/*   Updated: 2025/06/24 19:05:00 by albcamac         ###   ########.fr       */
+/*   Updated: 2025/06/25 06:20:11 by albcamac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +102,7 @@ static void	sort_dispatch(t_node **a, t_node **b)
 	else if (size == 5)
 		sort_5(a, b);
 	else if (size > 5)
-		dual_chunk_sort(a, b);
+		chunk_sort(a, b);
 }
 
 int	main(int argc, char **argv)

@@ -6,15 +6,15 @@
 #    By: albcamac <albcamac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 00:04:03 by albcamac          #+#    #+#              #
-#    Updated: 2025/06/24 17:45:49 by albcamac         ###   ########.fr        #
+#    Updated: 2025/06/25 06:12:56 by albcamac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= push_swap
 SRC 		= push_swap.c parsing.c mini_sort_utils.c \
 				mini_sort.c ops_push.c ops_rev_rotate.c \
-				ops_rotate.c ops_swap.c chunk_1.c chunk_utils.c \
-				chunk_2.c free_split.c
+				ops_rotate.c ops_swap.c chunk_utils.c \
+				chunk.c free_split.c
 OBJ 		= $(SRC:.c=.o)
 CC 			= cc
 CFLAGS 		= -Wall -Wextra -Werror

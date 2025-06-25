@@ -6,7 +6,7 @@
 /*   By: albcamac <albcamac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 23:54:30 by albcamac          #+#    #+#             */
-/*   Updated: 2025/06/25 00:05:19 by albcamac         ###   ########.fr       */
+/*   Updated: 2025/06/25 06:13:41 by albcamac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,8 @@ int		find_position(t_node *stack, int value);
 void	move_to_top(t_node **stack, int pos, char stack_id);
 int		stack_size(t_node *stack);
 void	index_stack(t_node *stack);
-void	dual_chunk_sort(t_node **a, t_node **b);
+void	chunk_sort(t_node **a, t_node **b);
 int		is_sort(t_node *a);
-int		find_next_in_chunk(t_node *a, int chunk_start, int chunk_end);
-void	bring_max_from_b_to_a(t_node **a, t_node **b);
 void	free_stack(t_node *stack);
 void	free_split(char **arr);
 
